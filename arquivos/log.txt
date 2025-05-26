@@ -1,0 +1,13 @@
+ocorreu um erro em - menu principal - erro: invalid literal for int() with base 10: 'dkasjdhsakd'. As 2025-05-23 19:51:38.975611
+ocorreu um erro em - periodo de gastos - erro: invalid literal for int() with base 10: 'adlksjda'. As 2025-05-23 19:53:16.362345
+ocorreu um erro em - adição de gastos - erro: invalid literal for int() with base 10: 'askdjahs'. As 2025-05-23 19:53:20.757140
+ocorreu um erro em - adicionar valor - erro: could not convert string to float: '12,99'. As 2025-05-23 21:29:44.523750
+ocorreu um erro em - adicionar valor - erro: could not convert string to float: ''. As 2025-05-23 21:29:52.624981
+ocorreu um erro em - salvar gasto - erro: can only concatenate list (not "str") to list. As 2025-05-23 21:35:06.459643
+ocorreu um erro em - salvar gasto - erro: can only concatenate list (not "str") to list. As 2025-05-23 21:36:13.912362
+ocorreu um erro em - salvar gasto - erro: can only concatenate list (not "str") to list. As 2025-05-23 21:38:22.969622
+ocorreu um erro em - salvar gasto - erro: can only concatenate list (not "str") to list. As 2025-05-23 21:40:26.293920
+ocorreu um erro em - salvar gasto - erro: can only concatenate list (not "str") to list. As 2025-05-23 21:42:53.704280
+ocorreu um erro em - salvar gasto - erro: can only concatenate list (not "str") to list. As 2025-05-23 21:44:27.781190
+ocorreu um erro em - salvar gasto - erro: can only concatenate list (not "str") to list. As 2025-05-23 21:45:47.892851
+ocorreu um erro em - salvar gasto - erro: write() argument must be str, not list. As 2025-05-23 21:49:34.519329
