@@ -1,3 +1,3 @@
 from funcoes import *
 
-print(listar_tipos())
+print(get_from_ano(2025))

@@ -56,7 +56,26 @@ while True:
         elif opc_extrato == 2:
           pass
         elif opc_extrato == 3:
-          pass
+          print("Digite o ano para ver os gastos:")
+          try:
+            ano_pesquisa = int(input())
+          except Exception as erro:
+            log("pesquisa ano", erro)
+            ano_pesquisa = 0
+          
+          if ano_pesquisa == 0:
+            print("Ano inválido, por favor, digite um ano válido")
+            continue
+          else:
+            print(f"Gastos do ano {ano_pesquisa}:")
+            gastos_ano = get_from_ano(ano_pesquisa)
+            if len(gastos_ano) == 0:
+              print("Nenhum gasto encontrado para o ano selecionado")
+            else:
+              print("<------------------------->")
+              for gasto in gastos_ano:
+                print(gasto)
+            print("<------------------------->")	
         else:
           print("Opção Inválida, por favor, selecione uma opção correta")
 
@@ -102,7 +121,7 @@ while True:
                 print("Valor inválido, por favor, digite um valor válido")
                 continue
               
-              print("Digite a data do gasto (dd/mm/aa):")
+              print("Digite a data do gasto (dd/mm/aaaa):")
               try:
                 data = input().split("/")
               except Exception as erro:

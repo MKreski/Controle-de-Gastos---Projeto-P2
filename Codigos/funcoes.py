@@ -13,16 +13,16 @@ def get_from_dia():
 def get_from_mes():
     pass
 
-def get_from_ano():
-    pass
+def get_from_ano(ano_pesquisa):
+    pesquisa = []
+    with open("../arquivos/gastos.txt", "r") as arq:
+        for i in arq:
+            gasto = i.strip().split(", ")
+            data = gasto[3].split("/")
+            if int(data[2]) == ano_pesquisa:
+                pesquisa.append(i.strip())
 
-def amostradinho(lista):
-    for i in lista:
-        pass
-    pass
-
-def list_tipos():
-    pass
+    return pesquisa
 
 def cadastro_tipos(tipo : str):
     texto_normalizado = unicodedata.normalize('NFKD', tipo)
@@ -49,11 +49,6 @@ def listar_tipos():
     return tipos
 
 def salvar_gasto(tipo : str, nome : str, valor : float, data : list):
-    gasto = []
     data_gasto = data[0] + "/" + data[1] + "/" + data[2]
     with open("../arquivos/gastos.txt", "a+") as arq:
-        gasto.append(tipo.upper())
-        gasto.append(nome.upper())
-        gasto.append(valor)
-        gasto.append(data_gasto)
-        arq.write(str(gasto) + "\n")
+        arq.write(f"{tipo}, {nome}, {valor}, {data_gasto}\n")
