@@ -52,9 +52,45 @@ while True:
           print("Retornando ao Menu...")
           break
         elif opc_extrato == 1:
-          pass
+          print("Digite o dia do mês atual você deseja ver os gastos?")
+          try:
+            dia_pesquisa = int(input())
+          except Exception as erro:
+            log("pesquisa dia", erro)
+            dia_pesquisa = 0
+          if dia_pesquisa == 0:
+            print("Dia inválido, por favor, digite um dia válido")
+            continue
+          else:
+            print(f"Gastos do dia {dia_pesquisa}:")
+            gastos_dia = get_from_dia(dia_pesquisa)
+            if len(gastos_dia) == 0:
+              print("Nenhum gasto encontrado para o dia selecionado")
+            else:
+              print("<------------------------->")
+              for gasto in gastos_dia:
+                print(gasto)
+            print("<------------------------->")
         elif opc_extrato == 2:
-          pass
+          print("Digite o mês para ver os gastos:")
+          try:
+            mes_pesquisa = int(input())
+          except Exception as erro:
+            log("pesquisa mes", erro)
+            mes_pesquisa = 0
+          if mes_pesquisa < 1 or mes_pesquisa > 12:
+            print("Mês inválido, por favor, digite um mês válido")
+            continue
+          else:
+            print(f"Gastos do mês {mes_pesquisa}:")
+            gastos_mes = get_from_mes(mes_pesquisa)
+            if len(gastos_mes) == 0:
+              print("Nenhum gasto encontrado para o mês selecionado")
+            else:
+              print("<------------------------->")
+              for gasto in gastos_mes:
+                print(gasto)
+            print("<------------------------->")
         elif opc_extrato == 3:
           print("Digite o ano para ver os gastos:")
           try:

@@ -1,17 +1,35 @@
 from datetime import *
 import unicodedata
-mes_atual = date.month
 ano_atual = date.year
+mes_atual = date.month
+dia_atual = date.today().day
 
 def log(onde : str, erro : str):
     with open("../arquivos/log.txt", "a+") as arq:
         arq.write( "ocorreu um erro em - " + onde + " - erro: " + str(erro) + ". As " + str(datetime.now()) + "\n")
 
-def get_from_dia():
-    pass
+def get_from_dia(dia_pesquisa):
+    pesquisa = []
+    hoje = date.today()
+    with open("../arquivos/gastos.txt", "r") as arq:
+        for i in arq:
+            gasto = i.strip().split(", ")
+            data = gasto[3].split("/")
+            if int(data[0]) == dia_pesquisa and int(data[1]) == mes_atual and int(data[2]) == hoje.year:
+                pesquisa.append(i.strip())
 
-def get_from_mes():
-    pass
+    return pesquisa
+
+def get_from_mes(mes_pesquisa):
+    pesquisa = []
+    with open("../arquivos/gastos.txt", "r") as arq:
+        for i in arq:
+            gasto = i.strip().split(", ")
+            data = gasto[3].split("/")
+            if int(data[1]) == mes_pesquisa and int(data[2]) == ano_atual:
+                pesquisa.append(i.strip())
+    
+    return pesquisa
 
 def get_from_ano(ano_pesquisa):
     pesquisa = []
